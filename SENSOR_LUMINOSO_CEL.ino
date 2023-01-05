@@ -25,8 +25,11 @@ void loop()
 }
 void leia_luminozidade(){
   float leitura_luz = analogRead(PINO_SENSOR_LUZ); //Read light level
-  if (leitura_luz >= 150.00){
+  if ((leitura_luz >= 20.00)&&(!digitalRead(SENSOR_M))){
     digitalWrite(rl1, LOW);
+    delay(2000);
+    digitalWrite(rl1, HIGH);
+    delay(5000);
   }else{
     digitalWrite(rl1, HIGH);
   }
