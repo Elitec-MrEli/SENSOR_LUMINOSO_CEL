@@ -18,18 +18,20 @@ void setup(){
 }
 void loop()
 {
- leia_sensor_m();
+ //leia_sensor_m();
  delay(250);
  leia_luminozidade();
  
 }
 void leia_luminozidade(){
   float leitura_luz = analogRead(PINO_SENSOR_LUZ); //Read light level
-  if ((leitura_luz >= 20.00)&&(!digitalRead(SENSOR_M))){
+  if ((leitura_luz >= 11.00)&&(leitura_luz <= 18.00)){
     digitalWrite(rl1, LOW);
-    delay(2000);
+    Serial.println("Tocando..."+String(leitura_luz));
+    delay(1500);
+    Serial.println("Desligando..."+String(leitura_luz));
     digitalWrite(rl1, HIGH);
-    delay(5000);
+    delay(3000);
   }else{
     digitalWrite(rl1, HIGH);
   }
