@@ -9,6 +9,7 @@ int estado_SENSOR_M = 3;
 
 
 void setup(){
+  someFunction(13);
   pinMode(PINO_SENSOR_LUZ, INPUT); // DEFINE A PORTA DO SENSOR COMO ENTRADA
   pinMode(SENSOR_M, INPUT_PULLUP); // DEFINE A PORTA SENSOR_M COMO ENTRADA E ATIVA RESISTOR DE PULLUP
   pinMode(rl1,OUTPUT);             // DEFINE A PORTA DO RELE COMO SAIDA
@@ -48,4 +49,6 @@ void leia_sensor_m(){
      Serial.println("tampa fechada");
      //digitalWrite(rl1, HIGH);
   }
+}
+void someFunction(int num) {
 }
